@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "com.example.library_spring.proto";
+option java_outer_classname = "SubGenreProto";
+
+import "genre.proto";
+
+message SubGenre {
+ optional int64 id = 1;
+ optional string name = 2;
+ optional Genre genre = 3;
+}

@@ -1,0 +1,51 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-foreign-keys-for-user-and-books
+      author: Ann
+      changes:
+        - addForeignKeyConstraint:
+            baseTableName: books
+            baseColumnNames: author_id
+            constraintName: fk_books_author
+            referencedTableName: users
+            referencedColumnNames: id
+
+        - addForeignKeyConstraint:
+            baseTableName: users
+            baseColumnNames: book_id
+            constraintName: fk_users_book
+            referencedTableName: books
+            referencedColumnNames: id
+
+        - createTable:
+            tableName: user_books
+            columns:
+              - column:
+                  name: user_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: book_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+
+        - addPrimaryKey:
+            tableName: user_books
+            columnNames: user_id, book_id
+            constraintName: pk_user_books
+
+        - addForeignKeyConstraint:
+            baseTableName: user_books
+            baseColumnNames: user_id
+            constraintName: fk_user_books_user
+            referencedTableName: users
+            referencedColumnNames: id
+
+        - addForeignKeyConstraint:
+            baseTableName: user_books
+            baseColumnNames: book_id
+            constraintName: fk_user_books_book
+            referencedTableName: books
+            referencedColumnNames: id

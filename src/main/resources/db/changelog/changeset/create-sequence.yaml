@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - changeSet:
+      id: createSeq
+      author: Ann
+      changes:
+        - createSequence:
+            sequenceName: BOOKS_SEQ
+        - createSequence:
+            sequenceName: GENRES_SEQ
+        - createSequence:
+            sequenceName: SUB_GENRES_SEQ
+        - createSequence:
+            sequenceName: REVIEWS_SEQ
+        - createSequence:
+            sequenceName: USERS_SEQ

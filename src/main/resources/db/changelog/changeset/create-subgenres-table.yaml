@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-subgenres-table
+      author: Ann
+      changes:
+        - createTable:
+            tableName: sub_genres
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+              - column:
+                  name: genre_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_subgenres_genre
+                    references: genres(id)

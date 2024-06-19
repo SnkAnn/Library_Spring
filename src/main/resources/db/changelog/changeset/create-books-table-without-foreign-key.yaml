@@ -1,0 +1,42 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-books-table-without-foreign-key
+      author: Ann
+      changes:
+        - createTable:
+            tableName: books
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: title
+                  type: varchar(255)
+              - column:
+                  name: description
+                  type: varchar(255)
+              - column:
+                  name: amount_of_reads
+                  type: integer
+              - column:
+                  name: adding_time
+                  type: varchar(255)
+              - column:
+                  name: imageurl
+                  type: varchar(255)
+              - column:
+                  name: text
+                  type: varchar(255)
+              - column:
+                  name: author_id
+                  type: bigint
+              - column:
+                  name: genre_id
+                  type: bigint
+              - column:
+                  name: sub_genre_id
+                  type: bigint

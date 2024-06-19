@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+option java_package = "com.example.library_spring.proto";
+option java_outer_classname = "UserAndBookAndReviewProto";
+
+import "genre.proto";
+import "subgenre.proto";
+//
+// protoc --java_out=src/main/java/ --proto_path=src/main/proto/ src/main/proto/genre.proto
+// protoc --java_out=src/main/java/ --proto_path=src/main/proto/ src/main/proto/subgenre.proto
+// protoc --java_out=src/main/java/ --proto_path=src/main/proto/ src/main/proto/userBookReview.proto
+message User {
+ optional int64 id = 1;
+ optional string login = 2;
+ optional string password = 3;
+ optional string mail = 4;
+ optional string description = 5;
+ optional string imageURL = 6;
+ optional Book currentBook = 7;
+ repeated Book readBooks = 8;
+}
+
+message Book {
+ optional int64 id = 1;
+ optional string title = 2;
+  optional User author = 3;
+ optional string description = 4;
+ optional Genre genre = 5;
+ optional SubGenre subGenre = 6;
+ repeated Review reviews = 7;
+ optional int32 amount_of_reads = 8;
+ optional string adding_time = 9;
+ optional string imageURL = 10;
+ optional string text = 11;
+}
+message Review {
+ optional int64 id = 1;
+ optional User author = 2;
+ optional Book book = 3;
+ optional string text = 4;
+}

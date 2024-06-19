@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "com.example.library_spring.proto";
+option java_outer_classname = "GenreProto";
+
+message Genre {
+ optional int64 id = 1;
+ optional string name = 2;
+}

@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - include:
+      file: "db/changelog/changeset/create-genres-table.yaml"
+  - include:
+      file: "db/changelog/changeset/create-subgenres-table.yaml"
+  - include:
+      file: "db/changelog/changeset/create-books-table-without-foreign-key.yaml"
+  - include:
+      file: "db/changelog/changeset/create-user-table-without-foreign-key.yaml"
+  - include:
+      file: "db/changelog/changeset/create-foreign-keys-for-user-and-books.yaml"
+  - include:
+      file: "db/changelog/changeset/create-reviews-table.yaml"
+  - include:
+      file: "db/changelog/changeset/create-sequence.yaml"
+
+
