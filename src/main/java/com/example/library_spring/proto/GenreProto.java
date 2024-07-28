@@ -5,6 +5,7 @@
 
 package com.example.library_spring.proto;
 
+
 public final class GenreProto {
   private GenreProto() {}
   static {
